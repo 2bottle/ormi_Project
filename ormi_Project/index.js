@@ -1,12 +1,32 @@
-const $form = document.querySelector("form");
-const $input = document.querySelector("input");
-const $chatList = document.querySelector("ul");
+
+const goal = document.getElementById("goallist").value;
+const health = document.getElementById("health").value;
+const lifestyle = document.getElementById("lifestyle").value;
+const ability = document.getElementById("ability").value;
+const exercise = document.getElementById("exercise").value;
 
 // openAI API
 let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
-// 사용자의 질문
-let question;
+
+function getRecommendation(goal, health, lifestyle, ability, exercise) {
+
+    const goalval = () => {
+        if(goal === 'goal1'){
+            return '체중감량'
+        }else if(goal === 'goal2'){
+            return '근육증가'
+        }else if(goal === 'goal3'){
+            return '체력향상'
+        }else{
+            return '취미'
+        }
+    }
+
+    return `운동의 목표는 ${goalval()}이고 ${health}를 고려해야해. 평소 생활패턴은 ${lifestyle}이고, 나의 운동수준은 ${ability}이며, 내가 선호하는 운동은${exercise}야 운동루틴과 식단을 추천해줘`
+}
+
+let question = getRecommendation(goal, health, lifestyle, ability, exercise);
 
 // 질문과 답변 저장
 let data = [
@@ -16,15 +36,6 @@ let data = [
     },
 ];
 
-// 화면에 뿌려줄 데이터, 질문들
-let questionData = [];
-
-// input에 입력된 질문 받아오는 함수
-$input.addEventListener("input", (e) => {
-    question = e.target.value;
-});
-
-// 사용자의 질문을 객체를 만들어서 push
 const sendQuestion = (question) => {
     if (question) {
     data.push({
@@ -37,53 +48,3 @@ const sendQuestion = (question) => {
     });
     }
 };
-
-// 화면에 질문 그려주는 함수
-const printQuestion = async () => {
-    if (question) {
-    let li = document.createElement("li");
-    li.classList.add("question");
-    questionData.map((el) => {
-        li.innerText = el.content;
-    });
-    $chatList.appendChild(li);
-    questionData = [];
-    question = false;
-    }
-};
-
-// 화면에 답변 그려주는 함수
-const printAnswer = async (answer) => {
-    let li = document.createElement("li");
-    li.classList.add("answer");
-    li.innerText = answer;
-    $chatList.appendChild(li);
-};
-
-// api 요청보내는 함수
-const apiPost = async () => {
-    const result = await axios({
-    method: "post",
-    maxBodyLength: Infinity,
-    url: url,
-    headers: {
-        "Content-Type": "application/json",
-    },
-    data: JSON.stringify(data),
-    });
-    try {
-    console.log(result.data);
-    printAnswer(result.data.choices[0].message.content);
-    } catch (err) {
-    console.log(err);
-    }
-};
-
-// submit
-$form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    $input.value = null;
-    sendQuestion(question);
-    apiPost();
-    printQuestion();
-});
