@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>운동 루틴 및 식단 추천</title>
+    <link rel="stylesheet" href="./layout.css">
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header class="layout-header">
+        <h1>운동 루틴 및 식단 추천</h1>
+    </header>
+
+        <form action="post">
+            <div>
+                <label for="goallist">운동 목표</label>
+                <select name="goal" id="goallist">
+                    <option selected>선택</option>
+                    <option value="goal1">체중감량</option>
+                    <option value="goal2">근육증가</option>
+                    <option value="goal3">체력향상</option>
+                    <option value="goal4">취미</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="health">건강 상태:</label>
+                <input type="text" id="health" placeholder="사용자의 신체 상태 및 질병 여부" required>
+            </div>
+
+            <div>
+                <label for="lifestyle">생활 패턴:</label>
+                <input type="text" id="lifestyle" placeholder="사용자의 일상적인 활동량, 근무 시간 등" required>
+            </div>
+
+            <div>
+                <label for="ability">운동 능력:</label>
+                <input type="text" id="ability" placeholder="사용자의 운동 주기, 할 수 있는 운동" required>
+            </div>
+
+            <div>
+                <label for="exercise">선호하는 운동:</label>
+                <input type="text" id="exercise" placeholder="사용자가 선호하는 운동" required>
+            </div>
+
+            <button type="submit" onclick="getRecommendation()">추천 받기</button>
+        </form>
+
+    <ul></ul>
+
+    <footer class="layout-footer">
+        Copyright 2023. BG All rights reserved.
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>
