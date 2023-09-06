@@ -2,54 +2,59 @@
 <html>
 <head>
 <title>운동 루틴 및 식단 추천</title>
-<script src="./index.js"></script>
+<link rel="stylesheet" href="./layout.css">
+<!-- axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-<!-- 먼저, 사용자의 목표에는 체중 감량, 근육 증가, 체력 향상 등 다양한 목표가 있을 수 있습니다. 이러한 목표에 따라 운동 루틴과 식단을 조정할 수 있으며, 사용자가 원하는 목표를 입력받을 수 있습니다.
 
-건강 상태는 사용자의 신체 상태 및 질병 여부를 고려해야 합니다. 예를 들어, 사용자가 고혈압, 당뇨병 등의 질병을 가지고 있는 경우에는 식단 조절이 필요할 수 있습니다.
+<header class="layout-header">
+    <h1>운동 루틴 및 식단 추천</h1>
+</header>
 
-생활 패턴은 사용자의 일상적인 활동량, 근무 시간, 수면 패턴 등을 고려해야 합니다. 각각의 생활 패턴은 운동 및 식단 적용에 영향을 줄 수 있으므로, 사용자가 가져야 할 환경적인 요인을 알려주면 좋습니다.
+<div class="main">
+    <form action="post">
+        <div>
+            <label for="goallist">운동 목표</label>
+            <select name="goal" id="goallist">
+                <option selected>선택</option>
+                <option value="goal1">체중감량</option>
+                <option value="goal2">근육증가</option>
+                <option value="goal3">체력향상</option>
+                <option value="goal4">취미</option>
+            </select>
+        </div>
+        
+        <div>
+            <label for="health">건강 상태:</label>
+            <input type="text" id="health" placeholder="사용자의 신체 상태 및 질병 여부">
+        </div>
+        
+        <div>
+            <label for="lifestyle">생활 패턴:</label>
+            <input type="text" id="lifestyle" placeholder="사용자의 일상적인 활동량, 근무 시간 등">
+        </div>
+        
+        <div>
+            <label for="ability">운동 능력:</label>
+            <input type="text" id="ability" placeholder="사용자의 운동 주기, 할 수 있는 운동">
+        </div>
+        
+        <div>
+            <label for="exercise">선호하는 운동:</label>
+            <input type="text" id="exercise" placeholder="사용자가 선호하는 운동">
+        </div>
+        
+        <button type="submit" onclick="getRecommendation()">추천 받기</button>
+    </form>
+</div class="main">
 
-운동 능력은 사용자가 현재 어떤 운동을 할 수 있는지, 얼마나 자주 운동하는지, 어떤 종류의 운동을 선호하는지 등을 고려해야 합니다. 이러한 정보는 운동 루틴을 개발할 때 활용될 수 있습니다.
+<ul></ul>
 
-마지막으로, 선호하는 운동은 사용자가 원하는 운동 종류를 의미합니다. 예를 들어, 사용자가 유산소 운동을 좋아한다면 식단 및 운동 루틴을 개발할 때 유산소 운동에 중점을 둘 수 있습니다. -->
+<footer class="layout-footer">
+    Copyright 2023. BG All rights reserved.
+</footer>
 
-<h1>운동 루틴 및 식단 추천</h1>
-
-<div>
-    <div>
-        <select name="goal" id="goallist">
-            <option value="goal1">체중감량</option>
-            <option value="goal2">근육증가</option>
-            <option value="goal3">체력향상</option>
-            <option value="goal4">취미</option>
-        </select>
-    </div>
-    
-    <div>
-        <label for="health">건강상태:</label>
-        <input type="text" id="health" placeholder="건강상태를 입력하세요">
-    </div>
-    
-    <div>
-        <label for="lifestyle">생활 패턴:</label>
-        <input type="text" id="lifestyle" placeholder="생활 패턴을 입력하세요">
-    </div>
-    
-    <div>
-        <label for="ability">운동 능력:</label>
-        <input type="text" id="ability" placeholder="운동 능력을 입력하세요">
-    </div>
-    
-    <div>
-        <label for="exercise">선호하는 운동:</label>
-        <input type="text" id="exercise" placeholder="선호하는 운동을 입력하세요">
-    </div>
-    
-    <button onclick="getRecommendation()">추천 받기</button>
-</div>
-
-<div id="recommendation"></div>
+<script src="./index.js"></script>
 </body>
 </html>
