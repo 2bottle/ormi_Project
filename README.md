@@ -7,7 +7,7 @@
 현대인의 바쁜 생활 속 생활 습관 중 식단과 운동루틴을 간편하게 추천해주는 플랫폼을 개발하고자 합니다.
 
 ## 개발 환경 및 배포 URL
-<img src="https://img.shields.io/badge/아이콘내용-바탕색?style=flat&logo=로고이름&logoColor=white"/>
+
 ## 프로젝트 구조와 개발 일정
 
 ## UI
