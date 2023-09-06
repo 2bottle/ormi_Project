@@ -7,7 +7,11 @@
 현대인의 바쁜 생활 속 생활 습관 중 식단과 운동루틴을 간편하게 추천해주는 플랫폼을 개발하고자 합니다.
 
 ## 개발 환경 및 배포 URL
-
+<div align="center">
+	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />
+	<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
+	<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
+</div>
 ## 프로젝트 구조와 개발 일정
 
 ## UI
