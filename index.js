@@ -108,19 +108,19 @@ const sendQuestion = (question) => {
     }
 };
 
-// 화면에 질문 그려주는 함수
-const printQuestion = async () => {
-    if (question) {
-    let li = document.createElement("li");
-    li.classList.add("question");
-    questionData.map((el) => {
-        li.innerText = el.content;
-    });
-    $chatList.appendChild(li);
-    questionData = [];
-    question = false;
-    }
-};
+// // 화면에 질문 그려주는 함수
+// const printQuestion = async () => {
+//     if (question) {
+//     let li = document.createElement("li");
+//     li.classList.add("question");
+//     questionData.map((el) => {
+//         li.innerText = el.content;
+//     });
+//     $chatList.appendChild(li);
+//     questionData = [];
+//     question = false;
+//     }
+// };
 
 // 화면에 답변 그려주는 함수
 const printAnswer = async (answer) => {
@@ -130,6 +130,13 @@ const printAnswer = async (answer) => {
     $chatList.appendChild(li);
 };
 
+// 답변을 지우는 함수
+function clearAnswers() {
+    const answerElements = document.querySelectorAll(".answer");
+    answerElements.forEach((element) => {
+        element.remove();
+    });
+}
 
 const apiPost = async () => {
     try {
@@ -156,6 +163,8 @@ const apiPost = async () => {
     }
 };
 
+let cnt;
+
 // submit
 $form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -163,5 +172,8 @@ $form.addEventListener("submit", (e) => {
     const question = getRecommendation();
     sendQuestion(question);
     apiPost();
-    printQuestion();
+    ++cnt 
+    if(cnt != 0){
+        clearAnswers();
+    }
 });
