@@ -26,7 +26,9 @@ ormi_Project
 
 8/29 ~ 9/6 
 ## UI
+<div>
 <img width="800" alt="2" src="https://github.com/2bottle/ormi_Project/assets/109815482/4c346324-6f21-40c5-9d97-519d618a7e7b">
+</div>
 
 ## 메인 기능
 
