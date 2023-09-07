@@ -30,9 +30,9 @@ ormi_Project
 <img width="800" alt="2" src="https://github.com/2bottle/ormi_Project/assets/109815482/4c346324-6f21-40c5-9d97-519d618a7e7b">
 </div>
 
-## 메인 기능
+## 4 메인 기능
 
 사용자의 운동 목표, 건강 상태, 생활 패턴, 운동 능력, 선호하는 운동을 입력받아 그에 따른 식단과 운동루틴을 추천해줍니다.
 
-## 추가 기능
+## 5 추가 기능
  
