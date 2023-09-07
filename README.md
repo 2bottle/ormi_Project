@@ -16,14 +16,12 @@ CSS
 https://2bottle.github.io/ormi_Project/
 ## 3 프로젝트 구조와 개발 일정
 # 3-1 프로젝트 구조
-
+```
 ormi_Project
-
  ┣ index.html
- 
  ┣ index.js
- 
  ┗ layout.css
+```
 # 3-2 개발 일정 
 
 8/29 ~ 9/6 
